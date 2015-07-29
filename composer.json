@@ -9,6 +9,7 @@
     "require": {
         "monolog/monolog": "^1.15",
         "slim/slim": "^2.6",
-        "twig/twig": "^1.18"
+        "twig/twig": "^1.18",
+        "slim/views": "^0.1.3"
     }
 }
