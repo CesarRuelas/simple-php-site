@@ -1,0 +1,10 @@
+{
+    "name": "root/simple-php-site",
+    "authors": [
+        {
+            "name": "CesarRuelas",
+            "email": "cesarruelas.bm@gmail.com"
+        }
+    ],
+    "require": {}
+}
