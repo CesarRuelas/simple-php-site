@@ -11,12 +11,12 @@ use Monolog\Handler\StreamHandler;
 
 $app = new \Slim\Slim();
 
-$app->get('/', function () {
-    echo "Hello, World!";
+$app->get('/', function () use($app) {
+    $app->render('index.html');
 });
 
-$app->get('/contact', function () {
-    echo "Hello, Prospect!";
+$app->get('/contact', function () use ($app) {
+    $app->render('contact.html');
 });
 
 $app->run();
