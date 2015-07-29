@@ -6,5 +6,7 @@
             "email": "cesarruelas.bm@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "monolog/monolog": "^1.15"
+    }
 }
