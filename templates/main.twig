@@ -26,8 +26,8 @@
   <header>
     <h1>Ralph Waldo Emerson</h1>
     <nav>
-      <a href="/" {% block aboutClass %}{% endblock aboutClass %}>About</a>
-      <a href="/contact" {% block contactClass %}{% endblock contactClass %}>Contact</a>
+      <a href="{{ baseUrl() }}" {% block aboutClass %}{% endblock aboutClass %}>About</a>
+      <a href="{{ siteUrl('/contact') }}" {% block contactClass %}{% endblock contactClass %}>Contact</a>
     </nav>
   </header>
 
@@ -44,8 +44,8 @@
     {% block footer %}
       <p>A project from <strong><a href="http://teamtreehouse.com">Treehouse</a></strong></p>
       <nav>
-        <a href="index.html" class="selected">About</a>
-        <a href="contact.html">Contact</a>
+        <a href="{{ baseUrl() }}" {% block aboutClassFooter %}{% endblock aboutClassFooter %}>About</a>
+        <a href="{{ siteUrl('/contact') }}" {% block contactClassFooter %}{% endblock contactClassFooter %}>Contact</a>
       </nav>
     {% endblock footer %}
   </footer>
