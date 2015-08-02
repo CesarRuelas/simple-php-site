@@ -45,6 +45,31 @@ $app->post('/contact', function () use ($app) {
 		//message the user there was a problem
 		$app->redirect('/contact');
 	}
+
+	$transport = Swift_SendmailTransport::newInstance('/usr/sbin/sendmail -bs');
+	$mailer = \Swift_Mailer::newInstance($transport);
+
+	$message = \Swift_Message::newInstance();
+	$message->setSubject('New email from website!');
+	$message->setFrom(array(
+		$cleanEmail => $cleanName
+	));
+	$message->setTo(array(
+		'carlos@carloslenovo'
+	));
+	$message->setBody($cleanMsg);
+
+	$result = $mailer->send($message);
+
+	if ($result > 0) {
+		//send message to user about success
+		$app->redirect('/');
+	} else {
+		//send message to user about the error
+		//log this error for ourselves
+		$app->redirect('/contact');
+	}
+
 });
 
 $app->run();
